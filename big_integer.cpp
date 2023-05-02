@@ -9,8 +9,7 @@ big_integer::big_integer(const big_integer& other) {
 }
 
 big_integer::big_integer(big_integer&& other) noexcept {
-	number_ = other.number_;
-	other.number_ = nullptr;
+	number_ = std::move(other.number_);
 }
 
 big_integer& big_integer::operator=(const big_integer& other) {
